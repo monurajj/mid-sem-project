@@ -160,8 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const jobsContainer = document.querySelector('.container');
     const searchInput = document.querySelector('#search-bar');
     const clearButton = document.querySelector('#clear-button');
-
-    // Function to render job listings based on provided data
     function renderJobs(jobs) {
         jobsContainer.innerHTML = '';
 
@@ -201,10 +199,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Initial render with all jobs
     renderJobs(jobsData.jobs);
 
-    // Function to filter jobs based on selected keyword
     window.filterJobs = function (keyword) {
         const filteredJobs = jobsData.jobs.filter(job => 
             job.role === keyword || job.level === keyword || (job.languages && job.languages.includes(keyword)) || (job.tools && job.tools.includes(keyword))
@@ -212,13 +208,10 @@ document.addEventListener("DOMContentLoaded", function () {
         renderJobs(filteredJobs);
         updateSearchBar(keyword);
     };
-
-    // Function to update search bar based on selected keywords
     function updateSearchBar(keyword) {
         searchInput.value = keyword;
     }
 
-    // Event listener for clear button
     clearButton.addEventListener('click', function () {
         searchInput.value = '';
         renderJobs(jobsData.jobs);
