@@ -14,10 +14,10 @@ hr{
 }
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(200, 233, 240);
+    background-color: rgb(224, 238, 242);
     padding-top: 20px;
     margin: 15px 15vw;
     margin-top: 40px;
@@ -118,7 +118,15 @@ h1{
     background-color: #5b9f9f;
     color: white;
 }
-
+#search-bar{
+    width: 75%;
+    height: 5vh;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+   
+}
 
 
 /* Adding media query for small screens */
